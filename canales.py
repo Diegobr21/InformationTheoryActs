@@ -22,6 +22,7 @@ def alfabetos_regulares(inputA, outputB):
     for i in range(n):
         print(f'{i+1}       {lensA[i]}      {lensB[i]}')
 
+
 def alfabetos_irregulares(inputA, inputB):
     print('Ok')
 
@@ -35,29 +36,35 @@ except:
 if(answer == 1):
     irregular = True
 
-if(irregular):
+if(irregular): #?--IRREGULAR ALPHABETS
     try:
-        caracteres = int(input('Ingresa cuantos diferentes caracteres hay en el alfabeto: '))
+        caracteres = int(input('Ingresa cuantos diferentes caracteres hay en el alfabeto de salida: '))
         B = [[] for i in range(caracteres)]
         for i in range(caracteres):
             caracter = str(input(f'Ingresa el caracter #{1+i} sin espacios: '))
             B[i].append(caracter)
+        inp_A = str(input('Ingrese los caracteres del alfabeto de entrada sin espacios: '))
+        lengthA = len(inp_A)
         print('Alfabeto de salida: \n', B)
+        alfabetos_irregulares(inp_A, B)
+
     except:
         print('Caracter o numero invalido')
+        sys.exit()
 
-else:
+else: #?--REGULAR ALPHABETS
     try:
         inp_A = str(input('Ingrese los caracteres del alfabeto de entrada sin espacios: '))
         out_B = str(input('Ingrese los caracteres del alfabeto de salida sin espacios: '))
         lengthA = len(inp_A)
         lengthB = len(out_B)
+        alfabetos_regulares(inp_A, out_B)
     except:
         print('Caracteres no validos')
+        sys.exit()
 
 
-
-
+#!Comment everything else and run this code if you want to see how itertools.product() works
 """
 #TEST code
 perm = product('01*', repeat=2)
