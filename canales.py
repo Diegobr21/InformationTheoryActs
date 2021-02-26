@@ -35,6 +35,8 @@ except:
     sys.exit()
 if(answer == 1):
     irregular = True
+else:
+    irregular = False
 
 if(irregular): #?--IRREGULAR ALPHABETS
     try:
