@@ -65,6 +65,7 @@ if(equiprobable):
 		prob = float(input(f'Ingrese la probabilidad de los eventos: '))
 		probabilidad_eventos.append(prob)
 
+		# Numeros mayores que 1 y menores que 0
 		if (prob > 1) or (prob < 0):
 			print('Ingrese una probabilidad valida (entre 0 y 1)')
 			sys.exit()
