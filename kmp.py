@@ -1,3 +1,19 @@
+def get_prefix(pattern, length):
+    prefix_arr = [0] * length
+    n = 0
+    m = 1
+    while m != length:
+        if pattern[m] == pattern[n]:
+            n += 1
+            prefix_arr[m] = n
+            m += 1
+        elif n != 0:
+            n = prefix_arr[n-1]
+        else:
+            prefix_arr[m] = 0
+            m += 1
+    return prefix_arr
+
 def KMP(pattern, text):
     prefix_arr = get_prefix(pattern, len(pattern))
   
@@ -27,23 +43,6 @@ def KMP(pattern, text):
     real_partial_matches = [e for e in partial_matches if e not in initial_point]
     real_partial_matches = set(real_partial_matches)
     return initial_point, real_partial_matches
-
-
-def get_prefix(pattern, length):
-    prefix_arr = [0] * length
-    n = 0
-    m = 1
-    while m != length:
-        if pattern[m] == pattern[n]:
-            n += 1
-            prefix_arr[m] = n
-            m += 1
-        elif n != 0:
-            n = prefix_arr[n-1]
-        else:
-            prefix_arr[m] = 0
-            m += 1
-    return prefix_arr
 
 
 string = input('Enter the string or press enter if you want the default one: ')
