@@ -18,9 +18,9 @@ def alfabetos_regulares(inputA, outputB):
         lensB.append(len(list(permB)))
 
     print('\n')
-    print('l        A         B\n')
+    print('l\tA\tB\n')
     for i in range(n):
-        print(f'{i+1}       {lensA[i]}      {lensB[i]}')
+        print(f'{i+1}\t{lensA[i]}\t{lensB[i]}')
 
 
 def alfabetos_irregulares(inputA, inputB):
