@@ -1,41 +1,18 @@
 import math
 
-# Arrays
-p = [0.4, 0.5, 0.1]
+p = [0.2033, 0.3433, 0.2127, 0.2407]
 
-q = [[0.376, 0.016, 0.008],
-    [0.005, 0.465, 0.03],
-    [0.003, 0.004, 0.093]
-]
-#q = [[.94, .04, .02], [.01, .93, .06], [.03, .04, .93]]
+n = 4
+k = 4
 
-# Variables
-productoI = 0
-productoK = 0
-dividendo = 0
-sumaT = 0
-division = 0
-sumaK = 0
-sumaN = 0
+q = [[0.19,	0.0033333333, 0.0033333333, 0.0033333333], 
+[0.0058333333333, 0.3325, 0.00583333333333333, 0.00583333333333333], 
+[0.0035, 0.0035, 0.1995, 0.0035], [0.004, 0.004, 0.004, 0.228]]
 
-n = len(p)
-k = len(q)
-
-# Algorithm
+D = [0,0,0,0]
+I = 0
 for i in range(n):
-    productoK = 0
     for j in range(k):
-        dividendo = 0
-        for t in range(n):
-            sumaT = p[t]*q[t][j]
-            dividendo = dividendo + sumaT
-
-        division = (q[i][j]) / dividendo
-        sumaK = q[i][j] * math.log10(division)
-        productoK = productoK + sumaK
-    
-    sumaN = p[i] * productoK
-    productoI = sumaN + productoI
-
-
-print(f'\nI(A,B) = {productoI} \n')
+        D[i] += q[i][j]* (math.log10(q[i][j]/(p[0]*q[0][j] + p[1]*q[1][j] + p[2]*q[2][j])))
+    I += p[i] * D[i]
+print('Información mutua a maximizar para obtener la capacidad de canal: ', I)
