@@ -38,4 +38,5 @@ def display_all_suffix(subroot, suffix_s_prefix, level = 0):
         display_all_suffix(node, suffix_s_prefix + substr, level + 1)
               
 root = build_suffix_tree("ABABACA")
+#root = build_suffix_tree("ACDCEFACEDBADFCEDAC")
 display_all_suffix(root, "")

@@ -38,6 +38,7 @@ def expansion_binaria(fraccion):
     print('expansion binaria : ', expansion_binaria, 'inicio del periodo en indice: ', period_start)   
 
 #? ---START---
+"""
 n = int(input('Ingrese la cantidad de frecuencias a sacarles expansion binaria: '))
 
 fracciones = []
@@ -47,3 +48,4 @@ for i in range(n):
 
 for f in fracciones:
     expansion_binaria(f)
+"""
