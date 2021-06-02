@@ -34,8 +34,9 @@ def expansion_binaria(fraccion):
     period_start = erres.index(r) #repeated r
 
 
-    print('erres : ', erres)
-    print('expansion binaria : ', expansion_binaria, 'inicio del periodo en indice: ', period_start)   
+    #print('erres : ', erres)
+    #print('expansion binaria : ', expansion_binaria, 'inicio del periodo en indice: ', period_start)  
+    return expansion_binaria, period_start 
 
 #? ---START---
 """
